@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | ShopEase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ShopEase</h1>
+            <div class="search-cart">
+                <div class="search-box">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">All Products</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Clothing</a></li>
+                <li><a href="#">Home & Garden</a></li>
+                <li><a href="#">Sports</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container product-detail-container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="#">Electronics</a> &gt; <a href="#">Laptops</a> &gt; <span>MacBook Pro 14"</span>
+        </div>
+
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="https://via.placeholder.com/600x400?text=MacBook+Pro+Front" alt="MacBook Pro Front View" id="mainImage">
+                </div>
+                <div class="thumbnail-images">
+                    <img src="https://via.placeholder.com/100x100?text=Front" alt="Front View" onclick="changeImage(this)">
+                    <img src="https://via.placeholder.com/100x100?text=Side" alt="Side View" onclick="changeImage(this)">
+                    <img src="https://via.placeholder.com/100x100?text=Back" alt="Back View" onclick="changeImage(this)">
+                    <img src="https://via.placeholder.com/100x100?text=Keyboard" alt="Keyboard View" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>MacBook Pro 14" (2021)</h1>
+                <div class="rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="review-count">128 reviews</span>
+                    <span class="write-review">| <a href="#">Write a review</a></span>
+                </div>
+
+                <div class="price">
+                    <span class="current-price">$1,999.00</span>
+                    <span class="original-price">$2,199.00</span>
+                    <span class="discount">(10% off)</span>
+                </div>
+
+                <div class="availability">
+                    <i class="fas fa-check-circle"></i> In stock (15 available)
+                </div>
+
+                <div class="product-description">
+                    <p>The MacBook Pro 14" delivers game-changing performance with the M1 Pro chip, a stunning Liquid Retina XDR display, and all the ports you need. The most powerful MacBook Pro ever.</p>
+                    <ul>
+                        <li>Apple M1 Pro chip with 8-core CPU, 14-core GPU</li>
+                        <li>16GB unified memory</li>
+                        <li>512GB SSD storage</li>
+                        <li>14-inch Liquid Retina XDR display</li>
+                        <li>Up to 17 hours battery life</li>
+                    </ul>
+                </div>
+
+                <div class="product-options">
+                    <div class="option">
+                        <label>Color:</label>
+                        <div class="color-options">
+                            <span class="color-option active" style="background-color: #333;" title="Space Gray"></span>
+                            <span class="color-option" style="background-color: #f2f2f2;" title="Silver"></span>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <label>Storage:</label>
+                        <div class="storage-options">
+                            <button class="storage-option active">512GB</button>
+                            <button class="storage-option">1TB (+$200)</button>
+                            <button class="storage-option">2TB (+$400)</button>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <label>Memory:</label>
+                        <div class="memory-options">
+                            <button class="memory-option active">16GB</button>
+                            <button class="memory-option">32GB (+$400)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="adjustQuantity(-1)">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="quantity-btn" onclick="adjustQuantity(1)">+</button>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Free shipping on orders over $50</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-undo"></i>
+                        <span>30-day free returns</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>2-year warranty included</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab('description')">Description</button>
+                <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
+                <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+                <button class="tab-btn" onclick="openTab('shipping')">Shipping & Returns</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <h3>Product Description</h3>
+                <p>The MacBook Pro 14" is designed for professionals who demand the ultimate in performance and portability. With the revolutionary M1 Pro chip, this laptop delivers incredible speed and efficiency, allowing you to tackle demanding workflows with ease.</p>
+                <p>The stunning Liquid Retina XDR display offers extreme dynamic range and contrast ratio, perfect for creative professionals working with photos, videos, and graphics. The ProMotion technology with adaptive refresh rates up to 120Hz makes every interaction feel fluid and responsive.</p>
+                <p>With a comprehensive collection of ports including Thunderbolt 4, HDMI, and SDXC card slot, you can connect all your peripherals without dongles. The Magic Keyboard with Touch ID provides a comfortable typing experience and secure authentication.</p>
+                <p>Experience all-day battery life with up to 17 hours of video playback, so you can work unplugged for longer than ever before.</p>
+            </div>
+
+            <div id="specs" class="tab-content">
+                <h3>Technical Specifications</h3>
+                <table>
+                    <tr>
+                        <th>Processor</th>
+                        <td>Apple M1 Pro chip with 8-core CPU, 14-core GPU, 16-core Neural Engine</td>
+                    </tr>
+                    <tr>
+                        <th>Memory</th>
+                        <td>16GB unified memory</td>
+                    </tr>
+                    <tr>
+                        <th>Storage</th>
+                        <td>512GB SSD (configurable to 1TB or 2TB)</td>
+                    </tr>
+                    <tr>
+                        <th>Display</th>
+                        <td>14.2-inch Liquid Retina XDR display, 3024×1964 resolution, ProMotion technology with adaptive refresh rates up to 120Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Battery</th>
+                        <td>Up to 17 hours wireless web, 70-watt-hour lithium-polymer battery</td>
+                    </tr>
+                    <tr>
+                        <th>Ports</th>
+                        <td>3 x Thunderbolt 4 (USB-C), HDMI, SDXC card slot, MagSafe 3, 3.5mm headphone jack</td>
+                    </tr>
+                    <tr>
+                        <th>Wireless</th>
+                        <td>Wi-Fi 6 (802.11ax), Bluetooth 5.0</td>
+                    </tr>
+                    <tr>
+                        <th>Dimensions</th>
+                        <td>12.31 x 8.71 x 0.61 inches (312.6 x 221.2 x 15.5 mm)</td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td>3.5 pounds (1.6 kg)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="reviews" class="tab-content">
+                <h3>Customer Reviews</h3>
+                <div class="review-summary">
+                    <div class="overall-rating">
+                        <div class="average">4.7</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="total-reviews">Based on 128 reviews</div>
+                    </div>
+                    <div class="rating-distribution">
+                        <div class="rating-bar">
+                            <span>5 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 70%;"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>4 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 20%;"></div>
+                            </div>
+                            <span>20%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>3 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 5%;"></div>
+                            </div>
+                            <span>5%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>2 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 3%;"></div>
+                            </div>
+                            <span>3%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>1 star</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 2%;"></div>
+                            </div>
+                            <span>2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-list">
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="reviewer">John D.</div>
+                            <div class="review-date">October 15, 2023</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-title">Best laptop I've ever owned</div>
+                        <div class="review-content">
+                            <p>The performance of this MacBook Pro is simply incredible. I use it for video editing and it handles 4K footage like it's nothing. The display is gorgeous and the battery life is amazing. Worth every penny!</p>
+                        </div>
+                    </div>
+
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="reviewer">Sarah M.</div>
+                            <div class="review-date">September 28, 2023</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-title">Great but heavy</div>
+                        <div class="review-content">
+                            <p>Love the performance and display, but it's noticeably heavier than my previous MacBook Air. Also wish it had more USB ports. Otherwise, fantastic machine.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="write-review-btn">Write a Review</button>
+            </div>
+
+            <div id="shipping" class="tab-content">
+                <h3>Shipping Information</h3>
+                <p>We offer free standard shipping on all orders over $50. Standard shipping typically takes 3-5 business days. Expedited shipping options are available at checkout.</p>
+                
+                <h3>Return Policy</h3>
+                <p>We offer a 30-day return policy for most items. Items must be in original condition with all packaging and accessories included. Some exclusions may apply.</p>
+                
+                <h3>Warranty</h3>
+                <p>This product comes with a 2-year limited warranty covering manufacturer defects. Warranty does not cover accidental damage or normal wear and tear.</p>
+            </div>
+        </div>
+
+        <div class="related-products">
+            <h2>You May Also Like</h2>
+            <div class="related-products-grid">
+                <div class="related-product">
+                    <img src="https://via.placeholder.com/200x150?text=MacBook+Air" alt="MacBook Air">
+                    <h3>MacBook Air M1</h3>
+                    <div class="price">$999.00</div>
+                </div>
+                <div class="related-product">
+                    <img src="https://via.placeholder.com/200x150?text=MacBook+Pro+16" alt="MacBook Pro 16">
+                    <h3>MacBook Pro 16"</h3>
+                    <div class="price">$2,499.00</div>
+                </div>
+                <div class="related-product">
+                    <img src="https://via.placeholder.com/200x150?text=Magic+Keyboard" alt="Magic Keyboard">
+                    <h3>Magic Keyboard</h3>
+                    <div class="price">$99.00</div>
+                </div>
+                <div class="related-product">
+                    <img src="https://via.placeholder.com/200x150?text=Thunderbolt+Dock" alt="Thunderbolt Dock">
+                    <h3>Thunderbolt Dock</h3>
+                    <div class="price">$249.00</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>ShopEase</h3>
+                <p>Your one-stop shop for all your electronic needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@shopease.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 ShopEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Change main product image when thumbnail is clicked
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            const newSrc = element.src.replace('100x100', '600x400').replace(/\+/g, ' ');
+            mainImage.src = newSrc;
+            mainImage.alt = element.alt;
+        }
+
+        // Quantity adjustment
+        function adjustQuantity(change) {
+            const quantityInput = document.querySelector('.quantity-input');
+            let newValue = parseInt(quantityInput.value) + change;
+            if (newValue < 1) newValue = 1;
+            quantityInput.value = newValue;
+        }
+
+        // Tab switching
+        function openTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+
+            // Show the selected tab content and mark button as active
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Color option selection
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                colorOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Storage option selection
+        const storageOptions = document.querySelectorAll('.storage-option');
+        storageOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                storageOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Memory option selection
+        const memoryOptions = document.querySelectorAll('.memory-option');
+        memoryOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                memoryOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
